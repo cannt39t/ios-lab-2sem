@@ -13,7 +13,6 @@ class AppCoordinator {
     
     weak var window: UIWindow?
     static let shared: AppCoordinator = .init()
-    
     var authService = MockAuthService.shared
     
     var authCancellable: Set<AnyCancellable> = []
@@ -45,8 +44,8 @@ class AppCoordinator {
     }
     
     func showAppContent() {
-        let tabbar = MainTabBarCoordinator()
-        window?.rootViewController = tabbar.start()
+        let tabbarCorrdinator = MainTabBarCoordinator()
+        window?.rootViewController = tabbarCorrdinator.start()
     }
     
 }

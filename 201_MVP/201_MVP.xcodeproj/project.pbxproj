@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		05AD39AC299A4057000E7F3E /* CatalogService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05AD39AB299A4057000E7F3E /* CatalogService.swift */; };
+		05AD39AE299A4442000E7F3E /* CatalogCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05AD39AD299A4442000E7F3E /* CatalogCoordinator.swift */; };
+		05AD39B0299A48FD000E7F3E /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05AD39AF299A48FD000E7F3E /* DetailViewController.swift */; };
+		05AD39B3299A5785000E7F3E /* ProductCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05AD39B2299A5785000E7F3E /* ProductCollectionViewCell.swift */; };
 		05C223AC29993D0B009E1E37 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C223AB29993D0B009E1E37 /* AppDelegate.swift */; };
 		05C223AE29993D0B009E1E37 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C223AD29993D0B009E1E37 /* SceneDelegate.swift */; };
 		05C223B329993D0B009E1E37 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05C223B129993D0B009E1E37 /* Main.storyboard */; };
@@ -19,9 +23,14 @@
 		05C223CC29997875009E1E37 /* MainTabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C223CB29997875009E1E37 /* MainTabBarCoordinator.swift */; };
 		05C223D029997941009E1E37 /* CatalogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C223CF29997941009E1E37 /* CatalogViewController.swift */; };
 		05C223D229997A37009E1E37 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C223D129997A37009E1E37 /* ProfileViewController.swift */; };
+		05C223D429999320009E1E37 /* CatalogPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C223D329999320009E1E37 /* CatalogPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		05AD39AB299A4057000E7F3E /* CatalogService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogService.swift; sourceTree = "<group>"; };
+		05AD39AD299A4442000E7F3E /* CatalogCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogCoordinator.swift; sourceTree = "<group>"; };
+		05AD39AF299A48FD000E7F3E /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		05AD39B2299A5785000E7F3E /* ProductCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCollectionViewCell.swift; sourceTree = "<group>"; };
 		05C223A829993D0B009E1E37 /* 201_MVP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 201_MVP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		05C223AB29993D0B009E1E37 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		05C223AD29993D0B009E1E37 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -36,6 +45,7 @@
 		05C223CB29997875009E1E37 /* MainTabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarCoordinator.swift; sourceTree = "<group>"; };
 		05C223CF29997941009E1E37 /* CatalogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogViewController.swift; sourceTree = "<group>"; };
 		05C223D129997A37009E1E37 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		05C223D329999320009E1E37 /* CatalogPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +59,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		05AD39B1299A576E000E7F3E /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				05AD39B2299A5785000E7F3E /* ProductCollectionViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		05C2239F29993D0B009E1E37 = {
 			isa = PBXGroup;
 			children = (
@@ -83,11 +101,13 @@
 		05C223BF299945F2009E1E37 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				05AD39B1299A576E000E7F3E /* Cells */,
 				05C223CE29997923009E1E37 /* Profile */,
 				05C223CD2999791B009E1E37 /* Catalog */,
 				05C223C629995913009E1E37 /* Login */,
 				05C223C029994612009E1E37 /* AppCoordinator.swift */,
 				05C223CB29997875009E1E37 /* MainTabBarCoordinator.swift */,
+				05AD39AD299A4442000E7F3E /* CatalogCoordinator.swift */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -96,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				05C223C429994706009E1E37 /* AuthService.swift */,
+				05AD39AB299A4057000E7F3E /* CatalogService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -113,6 +134,8 @@
 			isa = PBXGroup;
 			children = (
 				05C223CF29997941009E1E37 /* CatalogViewController.swift */,
+				05C223D329999320009E1E37 /* CatalogPresenter.swift */,
+				05AD39AF299A48FD000E7F3E /* DetailViewController.swift */,
 			);
 			path = Catalog;
 			sourceTree = "<group>";
@@ -196,7 +219,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05AD39B0299A48FD000E7F3E /* DetailViewController.swift in Sources */,
 				05C223D029997941009E1E37 /* CatalogViewController.swift in Sources */,
+				05AD39B3299A5785000E7F3E /* ProductCollectionViewCell.swift in Sources */,
 				05C223CA29995981009E1E37 /* LoginPresenter.swift in Sources */,
 				05C223C129994612009E1E37 /* AppCoordinator.swift in Sources */,
 				05C223CC29997875009E1E37 /* MainTabBarCoordinator.swift in Sources */,
@@ -204,6 +229,9 @@
 				05C223AE29993D0B009E1E37 /* SceneDelegate.swift in Sources */,
 				05C223D229997A37009E1E37 /* ProfileViewController.swift in Sources */,
 				05C223C82999596A009E1E37 /* LoginViewController.swift in Sources */,
+				05C223D429999320009E1E37 /* CatalogPresenter.swift in Sources */,
+				05AD39AC299A4057000E7F3E /* CatalogService.swift in Sources */,
+				05AD39AE299A4442000E7F3E /* CatalogCoordinator.swift in Sources */,
 				05C223C529994706009E1E37 /* AuthService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -14,6 +14,7 @@ class MainTabBarCoordinator {
     func start() -> UIViewController {
         let tabBarController = UITabBarController()
         self.tabBarController = tabBarController
+//        tabBarController.viewControllers?.append(<#T##newElement: UIViewController##UIViewController#>)
         tabBarController.viewControllers = [shopping(), profile()]
         return tabBarController
     }
@@ -21,9 +22,10 @@ class MainTabBarCoordinator {
     private let storyboard = UIStoryboard(name: "Main", bundle: nil)
     
     private func shopping() -> UIViewController {
-        let contoller = storyboard.instantiateViewController(withIdentifier: "CatalogViewController")
-        contoller.tabBarItem = .init(title: "Catalog", image: UIImage(systemName: "cart"), selectedImage: UIImage(systemName: "cart.fill"))
-        return contoller
+        // Here we should create CatalogFlowCoordinator that return UINavigationControlller with
+        // UICollectionView with all products into
+        
+        return CatalogCoordinator.shared.start()
     }
     
     private func profile() -> UIViewController {

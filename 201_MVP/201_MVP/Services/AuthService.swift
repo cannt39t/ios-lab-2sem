@@ -13,10 +13,11 @@ enum AuthError: Error {
 }
 
 protocol AuthService {
-    var isAuthorized: AnyPublisher<Bool, Never> { get }
     
+    var isAuthorized: AnyPublisher<Bool, Never> { get }
     func signIn(login: String, password: String) async throws
     func signOut()
+    
 }
 
 
@@ -24,11 +25,11 @@ class MockAuthService: AuthService {
     
     static let shared: MockAuthService = .init()
     
-    private var _isAuthorized: CurrentValueSubject<Bool, Never> = .init(false)
+    private var _isAuthorized: CurrentValueSubject<Bool, Never> = .init(true)
     
     var isAuthorized: AnyPublisher<Bool, Never> {
         _isAuthorized
-            .removeDuplicates() 
+            .removeDuplicates()
             .eraseToAnyPublisher()
     }
     
