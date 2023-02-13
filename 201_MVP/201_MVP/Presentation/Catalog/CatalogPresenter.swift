@@ -30,6 +30,7 @@ class CatalogPresenterImpl: CatalogPresenter {
     private let catalogService = MockCatalogService.shared
     
     func loadProducts() {
+        products = []
         do {
             products = try catalogService.fetchProducts()
         } catch {

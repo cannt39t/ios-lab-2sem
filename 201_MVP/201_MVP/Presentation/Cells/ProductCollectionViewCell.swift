@@ -52,7 +52,7 @@ class ProductCollectionViewCell: UICollectionViewCell {
     public func setProduct(product: Product) {
         idLabel.text = "ID: \(product.id)"
         nameLabel.text = product.name
-        priceLabel.text = "\(product.price)"
+        priceLabel.text = "\(product.price)$"
     }
     
 }

@@ -15,17 +15,15 @@ protocol CatalogView {
 
 class CatalogViewController: UIViewController, CatalogView {
     var presenter: CatalogPresenter?
-    
     var collectionView: UICollectionView!
-    var source: [Product]?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         presenter!.loadProducts()
-        source = presenter?.products
         setupCollectionView()
         collectionView.reloadData()
+        setupRefreshController()
         
         view.backgroundColor = #colorLiteral(red: 0.9490196078, green: 0.9490196078, blue: 0.968627451, alpha: 1)
         title = "Catalog"
@@ -65,6 +63,22 @@ class CatalogViewController: UIViewController, CatalogView {
         return layout
     }
     
+    // MARK: RefreshController implementation
+    
+    func setupRefreshController() {
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(handleRefresh), for: .valueChanged)
+        collectionView?.refreshControl = refreshControl
+    }
+    
+    @objc func handleRefresh(_ refreshControl: UIRefreshControl) {
+        presenter?.loadProducts()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            refreshControl.endRefreshing()
+        }
+        collectionView.reloadData()
+    }
+    
     // MARK: Presenter implementation
     
     func showError(_ error: Error) {
@@ -77,13 +91,13 @@ class CatalogViewController: UIViewController, CatalogView {
 
 extension CatalogViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        source?.count ?? 0
+        return presenter?.products?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ProductCollectionViewCell.ID, for: indexPath) as? ProductCollectionViewCell else { fatalError() }
-        let product = source![indexPath.item]
-        cell.setProduct(product: product)
+        let product = presenter?.products![indexPath.item]
+        cell.setProduct(product: product!)
         return cell
     }
 }

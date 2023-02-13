@@ -14,7 +14,6 @@ class MainTabBarCoordinator {
     func start() -> UIViewController {
         let tabBarController = UITabBarController()
         self.tabBarController = tabBarController
-//        tabBarController.viewControllers?.append(<#T##newElement: UIViewController##UIViewController#>)
         tabBarController.viewControllers = [shopping(), profile()]
         return tabBarController
     }
@@ -22,9 +21,6 @@ class MainTabBarCoordinator {
     private let storyboard = UIStoryboard(name: "Main", bundle: nil)
     
     private func shopping() -> UIViewController {
-        // Here we should create CatalogFlowCoordinator that return UINavigationControlller with
-        // UICollectionView with all products into
-        
         return CatalogCoordinator.shared.start()
     }
     
