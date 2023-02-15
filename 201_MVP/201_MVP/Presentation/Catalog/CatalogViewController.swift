@@ -9,7 +9,6 @@ import UIKit
 
 protocol CatalogView {
     var presenter: CatalogPresenter? {get set}
-
     func showError(_ error: Error)
 }
 

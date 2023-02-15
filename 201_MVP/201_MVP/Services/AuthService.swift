@@ -25,7 +25,7 @@ class MockAuthService: AuthService {
     
     static let shared: MockAuthService = .init()
     
-    private var _isAuthorized: CurrentValueSubject<Bool, Never> = .init(true)
+    private var _isAuthorized: CurrentValueSubject<Bool, Never> = .init(false)
     
     var isAuthorized: AnyPublisher<Bool, Never> {
         _isAuthorized
